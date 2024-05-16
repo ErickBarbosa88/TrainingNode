@@ -8,6 +8,8 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [alertOpen, setAlertOpen] = useState(false);
   const [alertMessage, setAlertMessage] = useState('');
+  const [password, setPassword] = useState('');
+
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -17,17 +19,24 @@ const Register = () => {
     setEmail(e.target.value);
   };
 
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
       const response = await axios.post('http://localhost:3000/user', {
         name: name,
-        email: email
+        email: email,
+        password: password
+
       });
 
       setEmail("");
       setName("");
+      setPassword("");
       setAlertMessage('Novo usuário cadastrado: ' + JSON.stringify(response.data));
       setAlertOpen(true); 
     } catch (error) {
@@ -49,6 +58,10 @@ const Register = () => {
         <label>
           Email:
           <input type="email" value={email} onChange={handleEmailChange} />
+        </label>
+        <label>
+          Password:
+          <input type="password" value={password} onChange={handlePasswordChange} />
         </label>
         <button type="submit">Cadastrar</button>
       </form>

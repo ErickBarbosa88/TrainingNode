@@ -10,3 +10,7 @@ CREATE TABLE "User" (
 
 -- CreateIndex
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
+
+-- AlterTable
+ALTER TABLE "User" ADD COLUMN "password" VARCHAR(255) NOT NULL;
+

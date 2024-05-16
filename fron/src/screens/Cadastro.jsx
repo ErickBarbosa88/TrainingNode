@@ -1,14 +1,11 @@
-import Register from '../components/cadastro'
+import Register from "../components/cadastro";
 
 function Cadastro() {
-
   return (
-      <div>
-       <Register/>
-      </div>
-      
-    
-  )
+    <div>
+      <Register />
+    </div>
+  );
 }
 
 export default Cadastro;
