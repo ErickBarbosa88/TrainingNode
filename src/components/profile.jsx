@@ -3,7 +3,7 @@ import React from 'react';
 import { useUser } from '../context/contextsUser';
 
 const Profile = () => {
-  const { userName } = useUser(); // Use o gancho personalizado para acessar o contexto
+  const { userName } = useUser(); 
 
   return (
     <div>

@@ -1,4 +1,4 @@
-import Register from "../components/cadastro";
+import Register from "../../components/Cadastro";
 
 function Cadastro() {
   return (

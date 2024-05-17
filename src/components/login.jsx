@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useUser } from '../context/contextsUser';
+import ThreeBackground from "./ThreeBackground.jsx";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -44,31 +45,36 @@ const Login = () => {
 
   return (
     <div>
-      <h2>Login</h2>
-      {error && <div>{error}</div>}
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Email:</label>
-          <input
-            type="email"
-            value={email}
-            onChange={handleEmailChange}
-            required
-          />
+      <ThreeBackground/>
+      <div style={{ position: 'relative', zIndex: 1, color: 'white', padding: '20px', background: 'rgba(0, 0, 0, 0.5)', borderRadius: '10px', maxWidth: '400px', margin: 'auto', marginTop: '100px' }}>
+        <h2>Login</h2>
+        {error && <div>{error}</div>}
+        <form onSubmit={handleSubmit}>
+          <div style={{ marginBottom: '10px' }}>
+            <label>Email:</label>
+            <input
+              type="email"
+              value={email}
+              onChange={handleEmailChange}
+              required
+              style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}
+            />
+          </div>
+          <div style={{ marginBottom: '10px' }}>
+            <label>Password:</label>
+            <input
+              type="password"
+              value={password}
+              onChange={handlePasswordChange}
+              required
+              style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}
+            />
+          </div>
+          <button type="submit" style={{ width: '100%', padding: '10px', borderRadius: '4px', border: 'none', background: '#00ff00', color: 'black', fontWeight: 'bold' }}>Login</button>
+        </form>
+        <div style={{ marginTop: '10px', textAlign: 'center' }}>
+          <Link to="/register" style={{ color: 'white', textDecoration: 'underline' }}>Cadastre-se</Link>
         </div>
-        <div>
-          <label>Password:</label>
-          <input
-            type="password"
-            value={password}
-            onChange={handlePasswordChange}
-            required
-          />
-        </div>
-        <button type="submit">Login</button>
-      </form>
-      <div>
-        <Link to="/register">Cadastre-se</Link>
       </div>
     </div>
   );
