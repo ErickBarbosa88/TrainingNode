@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useUser } from '../context/ContextsUser.tsx'
 import ThreeBackground from "./ThreeBackground.jsx";
 
 const Login = () => {
@@ -10,7 +9,6 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const { setUserName } = useUser();
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -34,7 +32,6 @@ const Login = () => {
       console.log(token);
       navigate("/profile");
       console.log(response.data)
-      setUserName(response.data.user.name);
     } catch (error) {
       setError(error.response.data.message);
     }
