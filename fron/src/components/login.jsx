@@ -23,7 +23,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:3000/user/login", {
+      const response = await axios.post("https://nodeandexpress-nz44.onrender.com/user/login", {
         email,
         password,
       });
