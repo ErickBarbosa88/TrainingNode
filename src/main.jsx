@@ -3,8 +3,8 @@ import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { UserProvider } from './context/contextsUser';
 import Profile from "./components/profile";
-import Login from "./components/Login";
-import Register from "./components/Cadastro";
+import Login from "./components/login";
+import Register from "./components/cadastro";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
