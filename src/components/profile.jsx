@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import { useUser } from '../context/contextsUser';
+import { useUser } from '../context/ContextsUser.tsx';
 
 const Profile = () => {
   const { userName } = useUser(); 
